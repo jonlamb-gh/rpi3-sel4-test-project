@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+set -e
+
+BUILD_TYPE=${1:-"Debug"}
+
+echo "Build type: $BUILD_TYPE"
+
+mkdir -p build/
+cd build/
+
+cmake \
+    -C../configs/rpi3.cmake \
+    -DCROSS_COMPILER_PREFIX=aarch64-linux-gnu- \
+    -DCMAKE_TOOLCHAIN_FILE=../kernel/gcc.cmake \
+    -DCMAKE_BUILD_TYPE=$BUILD_TYPE \
+    -G Ninja ..
+
+cmake ..
+
+ninja
+
+exit 0
