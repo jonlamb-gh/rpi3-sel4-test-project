@@ -19,8 +19,6 @@ config_option(
 )
 
 if(BuildWithCommonSimulationSettings)
-    # TODO - only useful for x86, come back and add kernel_arch parameter
-    #ApplyCommonSimulationSettings($)
     GenerateSimulateScript()
 endif()
 

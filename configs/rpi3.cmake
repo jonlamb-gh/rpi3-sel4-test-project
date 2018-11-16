@@ -13,7 +13,9 @@ set(ElfloaderImage "elf" CACHE STRING "")
 
 set(KernelVerificationBuild OFF CACHE BOOL "" FORCE)
 
+# TODO - add smp support
 #set(KernelMaxNumNodes "4" CACHE STRING "")
+set(KernelMaxNumNodes "1" CACHE STRING "")
 set(KernelNumDomains 1 CACHE STRING "")
 #set(KernelMaxNumBootinfoUntypedCap 200 CACHE STRING "")
 #set(KernelRetypeFanOutLimit "256" CACHE STRING "")
